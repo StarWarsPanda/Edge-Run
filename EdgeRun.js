@@ -1,13 +1,17 @@
-var s = 4;
+const level1 = [200,50,750,50,750,350,200,350];
 
-function setup() {
-  createCanvas(1280, 960);
+function setup()
+{
+  createCanvas(960,480);
+  background(0);
 }
 
-function draw() {
-  background(0);
-  noFill();
+function draw()
+{
   stroke(255);
-  strokeWeight(6);
-  rect((width/2) - 50 * s,(height/2) - 37.5 * s,100 * s,75 * s);
+  for (let i = 0;i < level1.length - 2;i+=2)
+    {
+      line(level1[i],level1[i+1],level1[i+2],level1[i+3]);
+    }
+  line (level1[level1.length-2],level1[level1.length-1],level1[0],level1[1]);
 }
